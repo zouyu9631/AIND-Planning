@@ -18,7 +18,7 @@ Search Algorithms
     10. astar_search h_pg_levelsum
 
 
-(/anaconda/envs/aind) ZSHdeiMac:AIND-Planning zouyu$ python run_search.py -p 2 -s 1 3 4 5 7 8 9
+(/anaconda/envs/aind) ZSHdeiMac:AIND-Planning zouyu$ python run_search.py -p 2 -s 1 3 4 5 7 8 9 10
 
 Solving Air Cargo Problem 2 using breadth_first_search...
 
@@ -799,5 +799,39 @@ Fly(P2, JFK, SFO)
 Unload(C2, P2, SFO)
 Load(C1, P1, SFO)
 Fly(P1, SFO, JFK)
+Unload(C1, P1, JFK)
+
+
+Solving Air Cargo Problem 2 using astar_search with h_pg_levelsum...
+
+Expansions   Goal Tests   New Nodes
+    86          88         841
+
+Plan length: 9  Time elapsed in seconds: 176.18179718899955
+Load(C1, P1, SFO)
+Fly(P1, SFO, JFK)
+Load(C2, P2, JFK)
+Fly(P2, JFK, SFO)
+Load(C3, P3, ATL)
+Fly(P3, ATL, SFO)
+Unload(C3, P3, SFO)
+Unload(C2, P2, SFO)
+Unload(C1, P1, JFK)
+
+
+Solving Air Cargo Problem 2 using astar_search with h_pg_setlevel...
+
+Expansions   Goal Tests   New Nodes
+    89          91         778
+
+Plan length: 9  Time elapsed in seconds: 160.77982952800085
+Load(C1, P1, SFO)
+Load(C2, P2, JFK)
+Fly(P1, SFO, JFK)
+Fly(P2, JFK, SFO)
+Load(C3, P3, ATL)
+Fly(P3, ATL, SFO)
+Unload(C3, P3, SFO)
+Unload(C2, P2, SFO)
 Unload(C1, P1, JFK)
 

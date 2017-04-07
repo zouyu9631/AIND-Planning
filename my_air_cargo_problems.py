@@ -192,6 +192,13 @@ class AirCargoProblem(Problem):
         pg_levelsum = pg.h_levelsum()
         return pg_levelsum
 
+    def h_pg_setlevel(self, node: Node):
+        # uses the planning graph setlevel heuristic calculated
+        # from this node to the goal
+        pg = PlanningGraph(self, node.state)
+        pg_setlevel = pg.h_setlevel()
+        return pg_setlevel
+
     def h_ignore_preconditions(self, node: Node):
         '''
         This heuristic estimates the minimum number of actions that must be
